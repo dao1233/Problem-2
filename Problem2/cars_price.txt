@@ -1,0 +1,2 @@
+ID	 Brand	 Model	 Year	 Color	 Price	 Registration Number
+4	 Honda	 Accord	 2019	 White	 18000.0	 OPQ012

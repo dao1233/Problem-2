@@ -1,0 +1,3 @@
+ID	 Brand	 Model	 Year	 Color	 Price	 Registration Number
+3	 Honda	 Civic	 2017	 Black	 17000.0	 LMN456
+4	 Honda	 Accord	 2019	 White	 18000.0	 OPQ012
