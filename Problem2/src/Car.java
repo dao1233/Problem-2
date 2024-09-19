@@ -30,11 +30,11 @@ public class Car implements Serializable{
     }
     
     // Filter for a list of cars of a given brand
-    public static void CarsBrand(Car[] CarList, String brand, String filename) {
+    public static void CarsBrand(Car[] CarList, String brand, String filename, int CarNum) {
     	try {  
   		  	FileWriter myWriter = new FileWriter(filename);
   		  	myWriter.write("ID\t Brand\t Model\t Year\t Color\t Price\t Registration Number\n");
-	  		for(int i=0; i<5; i++) {
+	  		for(int i=0; i< CarNum; i++) {
 	    		if(CarList[i].make == brand) {
 	    			System.out.println(CarList[i]);
 	    	  	    myWriter.write(CarList[i].id + "\t " + CarList[i].make + "\t " + CarList[i].model + "\t " + CarList[i].year + "\t " + CarList[i].color + "\t " + CarList[i].price + "\t " + CarList[i].registrationNumber + "\n");
@@ -50,11 +50,11 @@ public class Car implements Serializable{
     }
     
     // Filter for a list of cars of a given model that have been in use for more than n years
-    public static void CarsModelAndYear(Car[] CarList, String model, int givenyear, String filename) {
+    public static void CarsModelAndYear(Car[] CarList, String model, int givenyear, String filename, int CarNum) {
     	try {  
   		  	FileWriter myWriter = new FileWriter(filename);
   		  	myWriter.write("ID\t Brand\t Model\t Year\t Color\t Price\t Registration Number\n");
-	  		for(int i=0; i<5; i++) {
+	  		for(int i=0; i< CarNum; i++) {
 	    		if(CarList[i].model == model && ((2024 - CarList[i].year) > givenyear)) {
 	    			System.out.println(CarList[i]);
 	    	  	    myWriter.write(CarList[i].id + "\t " + CarList[i].make + "\t " + CarList[i].model + "\t " + CarList[i].year + "\t " + CarList[i].color + "\t " + CarList[i].price + "\t " + CarList[i].registrationNumber + "\n");
@@ -70,11 +70,11 @@ public class Car implements Serializable{
     }
     
     // Filter for a list of cars of a given year of manufacture, the price of which is higher than the specified one.
-    public static void CarsPriceAndYear(Car[] CarList, int price, int year, String filename) {
+    public static void CarsPriceAndYear(Car[] CarList, int price, int year, String filename, int CarNum) {
     	try {  
   		  	FileWriter myWriter = new FileWriter(filename);
   		  	myWriter.write("ID\t Brand\t Model\t Year\t Color\t Price\t Registration Number\n");
-	  		for(int i=0; i<5; i++) {
+	  		for(int i=0; i<CarNum; i++) {
 	    		if(CarList[i].price > price && (CarList[i].year == year)) {
 	    			System.out.println(CarList[i]);
 	    	  	    myWriter.write(CarList[i].id + "\t " + CarList[i].make + "\t " + CarList[i].model + "\t " + CarList[i].year + "\t " + CarList[i].color + "\t " + CarList[i].price + "\t " + CarList[i].registrationNumber + "\n");
@@ -99,9 +99,9 @@ public class Car implements Serializable{
     	CarList[4] = new Car(5, "Ford", "Focus", 2022, "Gray", 22000, "RST345");
     	//======================================================================
     	
-    	CarsBrand(CarList, "Honda", "Brand_cars.txt");
-    	CarsModelAndYear(CarList, "Camry", 2, "old_cars.txt");
-    	CarsPriceAndYear(CarList, 17000, 2019, "cars_price.txt");
+    	CarsBrand(CarList, "Honda", "Brand_cars.txt", ObjectNum);
+    	CarsModelAndYear(CarList, "Camry", 2, "old_cars.txt", ObjectNum);
+    	CarsPriceAndYear(CarList, 17000, 2019, "cars_price.txt", ObjectNum);
     	
     	
     }
